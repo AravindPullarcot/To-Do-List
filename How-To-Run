@@ -1,1 +1,34 @@
+project number 1101 
+spring.datasource.url=jdbc:mysql://localhost:3307/todos
+spring.datasource.username=DUMMY1
+spring.datasource.password=KISS
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
+
+#docker run --detach --env MYSQL_ROOT_PASSWORD=KISSpassword --env MYSQL_USER=DUMMY1 --env MYSQL_PASSWORD=KISS --env MYSQL_DATABASE=todos --name mysql --publish 3307:3306 mysql:8-oracle
+ Docker container for the MySQL database specifically. This container is isolated and contains the MySQL server
+Steps to download the docker image
+Install Docker:
+Create a Docker account on Docker Hub if not done.
+To Download and install Docker from the official Docker website.
+Open a Terminal or Command Prompt:
+
+On Windows, use Command Prompt or PowerShell.
+On macOS or Linux, use the terminal.
+Login to Docker Hub:
+
+Run docker login and enter your Docker Hub username and password.
+Pull the Docker Image:
+
+After login, use docker pull aravind316/todolist:mysql-8-oracle to download the Docker image.
+Run the Docker Container:
+
+Run docker run -d --name mysql-container -p 3307:3306 aravind316/todolist:mysql-8-oracle.
+This starts the container in detached mode, names it mysql-container, and maps port 3307 on the host to port 3306 on the container.
+Verify the Running Container:
+
+Check running containers with docker ps.
+To pull the springboot application
+docker login
+docker pull aravind316/springboot-to-do-list:latest
+to run docker run -p 8080:8080 aravind316/springboot-to-do-list:latest
